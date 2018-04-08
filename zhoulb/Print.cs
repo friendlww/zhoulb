@@ -64,6 +64,7 @@ namespace zhoulb
                     _iCellHeight = GridRow.Height + 5;
                     int iCount = 0;
                     //Check whether the current page settings allo more rows to print
+
                     if (iTopMargin + _iCellHeight >= e.MarginBounds.Height + e.MarginBounds.Top)
                     {
                         _bNewPage = true;
@@ -175,5 +176,7 @@ namespace zhoulb
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        
     }
 }

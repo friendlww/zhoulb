@@ -45,14 +45,14 @@ namespace zhoulb
             if (_opearType == "添加")
             {
                 var sql = InsertSQL.InsertProduct(txtProductName.Text, txtInPrice.Text, txtOutPrice.Text,
-                    txtProductCode.Text, txtRemark.Text, _clientId, _pictureId);
+                    txtProductCode.Text,txtProductNum.Text ,txtRemark.Text, _clientId, _pictureId);
                 MessageBox.Show(InsertData.InsertIntoData(sql) ? "添加商品成功" : "添加商品失败");
             }
             //更新
             if (_opearType == "修改")
             {
                 var updatesql = UpdateSQL.UpdateProduct(txtProductName.Text, txtInPrice.Text, txtOutPrice.Text,
-                    txtProductCode.Text, txtRemark.Text, _clientId, _pictureId, _productId);
+                    txtProductCode.Text, txtProductNum.Text, txtRemark.Text, _clientId, _pictureId, _productId);
                 MessageBox.Show(UpdateData.UpdateInfo(updatesql) ? "更新商品成功" : "更新商品失败");
             }
             Close();
@@ -151,6 +151,7 @@ namespace zhoulb
                     txtProductCode.Text = dt.Rows[0]["ProductCode"].ToString();
                     txtInPrice.Text = dt.Rows[0]["InPrice"].ToString();
                     txtOutPrice.Text = dt.Rows[0]["OutPrice"].ToString();
+                    txtProductNum.Text= dt.Rows[0]["ProductNum"].ToString();
                     txtRemark.Text = dt.Rows[0]["Remark"].ToString();
                     _clientId = int.Parse(dt.Rows[0]["ClientInfo"].ToString());
                     _pictureId = dt.Rows[0]["PictureInfo"].ToString();

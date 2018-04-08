@@ -48,6 +48,8 @@
             this.txtReturnValue = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lblClientPhone = new System.Windows.Forms.Label();
+            this.txtProductNum = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +65,7 @@
             // 
             // txtInPrice
             // 
-            this.txtInPrice.Location = new System.Drawing.Point(102, 76);
+            this.txtInPrice.Location = new System.Drawing.Point(102, 66);
             this.txtInPrice.Name = "txtInPrice";
             this.txtInPrice.Size = new System.Drawing.Size(100, 21);
             this.txtInPrice.TabIndex = 8;
@@ -71,7 +73,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 88);
+            this.label2.Location = new System.Drawing.Point(42, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 7;
@@ -87,7 +89,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 32);
+            this.label1.Location = new System.Drawing.Point(42, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 5;
@@ -95,7 +97,7 @@
             // 
             // txtOutPrice
             // 
-            this.txtOutPrice.Location = new System.Drawing.Point(102, 121);
+            this.txtOutPrice.Location = new System.Drawing.Point(102, 104);
             this.txtOutPrice.Name = "txtOutPrice";
             this.txtOutPrice.Size = new System.Drawing.Size(100, 21);
             this.txtOutPrice.TabIndex = 11;
@@ -103,7 +105,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 133);
+            this.label3.Location = new System.Drawing.Point(42, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 10;
@@ -129,7 +131,7 @@
             // 
             // txtProductCode
             // 
-            this.txtProductCode.Location = new System.Drawing.Point(102, 161);
+            this.txtProductCode.Location = new System.Drawing.Point(102, 141);
             this.txtProductCode.Name = "txtProductCode";
             this.txtProductCode.Size = new System.Drawing.Size(100, 21);
             this.txtProductCode.TabIndex = 15;
@@ -137,7 +139,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 173);
+            this.label4.Location = new System.Drawing.Point(42, 144);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 14;
@@ -155,7 +157,7 @@
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(102, 201);
+            this.txtRemark.Location = new System.Drawing.Point(102, 210);
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(100, 21);
             this.txtRemark.TabIndex = 18;
@@ -211,11 +213,29 @@
             this.lblClientPhone.Size = new System.Drawing.Size(0, 12);
             this.lblClientPhone.TabIndex = 23;
             // 
+            // txtProductNum
+            // 
+            this.txtProductNum.Location = new System.Drawing.Point(102, 174);
+            this.txtProductNum.Name = "txtProductNum";
+            this.txtProductNum.Size = new System.Drawing.Size(100, 21);
+            this.txtProductNum.TabIndex = 24;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(40, 177);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 12);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "商品数量";
+            // 
             // ProductInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(697, 363);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtProductNum);
             this.Controls.Add(this.lblClientPhone);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtReturnValue);
@@ -266,5 +286,7 @@
         private System.Windows.Forms.TextBox txtReturnValue;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblClientPhone;
+        private System.Windows.Forms.TextBox txtProductNum;
+        private System.Windows.Forms.Label label7;
     }
 }

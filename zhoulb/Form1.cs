@@ -46,9 +46,10 @@ namespace zhoulb
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            printDocument1.BeginPrint += printDocument1_BeginPrint;
-            printDocument1.PrintPage += printDocument1_PrintPage;
+            //printDocument1.BeginPrint += printDocument1_BeginPrint;
+            //printDocument1.PrintPage += printDocument1_PrintPage;
 
+            
             PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog
             {
                 WindowState = FormWindowState.Maximized,
@@ -72,6 +73,8 @@ namespace zhoulb
             //Open the print dialog
             PrintDialog printDialog = new PrintDialog
             {
+                //AllowSomePages = true,
+                //ShowHelp=true,
                 Document = printDocument1,
                 UseEXDialog = true
             };

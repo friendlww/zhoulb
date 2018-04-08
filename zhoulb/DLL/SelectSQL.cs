@@ -15,7 +15,7 @@ namespace zhoulb.DLL
         /// <returns></returns>
         public static string SelectStatisticInfo(string clientName, string clientPhone,string productName,string productCode ,string remark)
         {
-            var sql = "SELECT  b.ClientName,a.ProductName,a.ProductCode, a.InPrice, a.OutPrice, a.Remark, c.PictureID  FROM ProductInfo a LEFT JOIN ClientInfo b ON a.ClientInfo=b.ClientID LEFT JOIN PictureInfo c ON a.PictureInfo=c.PictureID";
+            var sql = "SELECT  b.ClientName,a.ProductName,a.ProductCode, a.InPrice, a.OutPrice,ifnull(a.ProductNum,0) ProductNum, a.Remark, c.PictureID  FROM ProductInfo a LEFT JOIN ClientInfo b ON a.ClientInfo=b.ClientID LEFT JOIN PictureInfo c ON a.PictureInfo=c.PictureID";
             var sqlpara = string.Empty;
             if (string.IsNullOrEmpty(clientName) == false)
             {
@@ -78,7 +78,7 @@ namespace zhoulb.DLL
         /// <returns></returns>
         public static string SelectProduct(string productName,string productCode,string remark)
         {
-            var sql = "SELECT ProductID, ProductName, ProductCode , InPrice, OutPrice, Remark from ProductInfo ";
+            var sql = "SELECT ProductID, ProductName, ProductCode , InPrice, OutPrice,ifnull(ProductNum,0) ProductNum ,Remark from ProductInfo ";
             var sqlpara = string.Empty;
             if (string.IsNullOrEmpty(productName) == false)
             {
@@ -127,7 +127,7 @@ namespace zhoulb.DLL
         public static string SelectProductWithId(int productId)
         {
             return
-                $"SELECT ProductID, ProductName, InPrice, OutPrice, ProductCode, Remark, ClientInfo,PictureInfo  FROM ProductInfo where ProductID={productId}";
+                $"SELECT ProductID, ProductName, InPrice, OutPrice, ProductCode,ifnull(ProductNum,0) ProductNum, Remark, ClientInfo,PictureInfo  FROM ProductInfo where ProductID={productId}";
         }
     }
 }

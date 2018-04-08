@@ -39,14 +39,6 @@
             this.客户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.商品ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OutPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.PictureID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtProductCode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtClientPhone = new System.Windows.Forms.TextBox();
@@ -58,6 +50,15 @@
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.button2 = new System.Windows.Forms.Button();
+            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OutPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.PictureID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -112,7 +113,7 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(876, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(954, 25);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -149,6 +150,7 @@
             this.ProductCode,
             this.InPrice,
             this.OutPrice,
+            this.ProductNum,
             this.Remark,
             this.Column6,
             this.PictureID});
@@ -157,66 +159,9 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 40;
-            this.dataGridView1.Size = new System.Drawing.Size(805, 488);
+            this.dataGridView1.Size = new System.Drawing.Size(909, 488);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // ClientName
-            // 
-            this.ClientName.DataPropertyName = "ClientName";
-            this.ClientName.HeaderText = "客户";
-            this.ClientName.Name = "ClientName";
-            this.ClientName.ReadOnly = true;
-            // 
-            // ProductName
-            // 
-            this.ProductName.DataPropertyName = "ProductName";
-            this.ProductName.HeaderText = "商品名";
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
-            // 
-            // ProductCode
-            // 
-            this.ProductCode.DataPropertyName = "ProductCode";
-            this.ProductCode.HeaderText = "编号";
-            this.ProductCode.Name = "ProductCode";
-            this.ProductCode.ReadOnly = true;
-            // 
-            // InPrice
-            // 
-            this.InPrice.DataPropertyName = "InPrice";
-            this.InPrice.HeaderText = "收入价格";
-            this.InPrice.Name = "InPrice";
-            this.InPrice.ReadOnly = true;
-            // 
-            // OutPrice
-            // 
-            this.OutPrice.DataPropertyName = "OutPrice";
-            this.OutPrice.HeaderText = "出售价格";
-            this.OutPrice.Name = "OutPrice";
-            this.OutPrice.ReadOnly = true;
-            // 
-            // Remark
-            // 
-            this.Remark.DataPropertyName = "Remark";
-            this.Remark.HeaderText = "备注";
-            this.Remark.Name = "Remark";
-            this.Remark.ReadOnly = true;
-            this.Remark.Width = 200;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "图片";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // PictureID
-            // 
-            this.PictureID.DataPropertyName = "PictureID";
-            this.PictureID.HeaderText = "PictureID";
-            this.PictureID.Name = "PictureID";
-            this.PictureID.ReadOnly = true;
-            this.PictureID.Visible = false;
             // 
             // txtProductCode
             // 
@@ -308,11 +253,75 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // ClientName
+            // 
+            this.ClientName.DataPropertyName = "ClientName";
+            this.ClientName.HeaderText = "客户";
+            this.ClientName.Name = "ClientName";
+            this.ClientName.ReadOnly = true;
+            // 
+            // ProductName
+            // 
+            this.ProductName.DataPropertyName = "ProductName";
+            this.ProductName.HeaderText = "商品名";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
+            // 
+            // ProductCode
+            // 
+            this.ProductCode.DataPropertyName = "ProductCode";
+            this.ProductCode.HeaderText = "编号";
+            this.ProductCode.Name = "ProductCode";
+            this.ProductCode.ReadOnly = true;
+            // 
+            // InPrice
+            // 
+            this.InPrice.DataPropertyName = "InPrice";
+            this.InPrice.HeaderText = "收入价格";
+            this.InPrice.Name = "InPrice";
+            this.InPrice.ReadOnly = true;
+            // 
+            // OutPrice
+            // 
+            this.OutPrice.DataPropertyName = "OutPrice";
+            this.OutPrice.HeaderText = "出售价格";
+            this.OutPrice.Name = "OutPrice";
+            this.OutPrice.ReadOnly = true;
+            // 
+            // ProductNum
+            // 
+            this.ProductNum.DataPropertyName = "ProductNum";
+            this.ProductNum.HeaderText = "商品数量";
+            this.ProductNum.Name = "ProductNum";
+            this.ProductNum.ReadOnly = true;
+            // 
+            // Remark
+            // 
+            this.Remark.DataPropertyName = "Remark";
+            this.Remark.HeaderText = "备注";
+            this.Remark.Name = "Remark";
+            this.Remark.ReadOnly = true;
+            this.Remark.Width = 200;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "图片";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // PictureID
+            // 
+            this.PictureID.DataPropertyName = "PictureID";
+            this.PictureID.HeaderText = "PictureID";
+            this.PictureID.Name = "PictureID";
+            this.PictureID.ReadOnly = true;
+            this.PictureID.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 691);
+            this.ClientSize = new System.Drawing.Size(954, 691);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.txtRemak);
@@ -356,19 +365,20 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtRemak;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClientName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn InPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OutPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Remark;
-        private System.Windows.Forms.DataGridViewButtonColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PictureID;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OutPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Remark;
+        private System.Windows.Forms.DataGridViewButtonColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PictureID;
     }
 }
 

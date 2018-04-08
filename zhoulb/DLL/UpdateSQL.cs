@@ -23,10 +23,10 @@ namespace zhoulb.DLL
         /// 更新商品数据
         /// </summary>
         /// <returns></returns>
-        public static string UpdateProduct(string productName, string inPrice, string outPrice, string productCode, string remark, int clientInfo, string pictureInfo,int productId)
+        public static string UpdateProduct(string productName, string inPrice, string outPrice, string productCode,string productNum, string remark, int clientInfo, string pictureInfo,int productId)
         {
             return
-                $"update ProductInfo set ProductName='{productName}',InPrice='{inPrice}',OutPrice='{outPrice}',ProductCode='{productCode}',Remark='{remark}',ClientInfo={clientInfo},PictureInfo='{pictureInfo}' where ProductID='{productId}'";
+                $"update ProductInfo set ProductName='{productName}',InPrice='{inPrice}',OutPrice='{outPrice}',ProductCode='{productCode}',ProductNum='{productNum}',Remark='{remark}',ClientInfo={clientInfo},PictureInfo='{pictureInfo}' where ProductID='{productId}'";
         }
     }
 }

@@ -42,6 +42,7 @@
             this.ProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OutPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -60,6 +61,7 @@
             this.ProductCode,
             this.InPrice,
             this.OutPrice,
+            this.ProductNum,
             this.Remark,
             this.Column1,
             this.Column2,
@@ -69,7 +71,7 @@
             this.dgvProductInfo.ReadOnly = true;
             this.dgvProductInfo.RowHeadersVisible = false;
             this.dgvProductInfo.RowTemplate.Height = 40;
-            this.dgvProductInfo.Size = new System.Drawing.Size(706, 262);
+            this.dgvProductInfo.Size = new System.Drawing.Size(820, 264);
             this.dgvProductInfo.TabIndex = 0;
             this.dgvProductInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductInfo_CellContentClick);
             // 
@@ -137,7 +139,7 @@
             this.添加商品ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(734, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(844, 25);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -176,6 +178,13 @@
             this.OutPrice.Name = "OutPrice";
             this.OutPrice.ReadOnly = true;
             // 
+            // ProductNum
+            // 
+            this.ProductNum.DataPropertyName = "ProductNum";
+            this.ProductNum.HeaderText = "商品数量";
+            this.ProductNum.Name = "ProductNum";
+            this.ProductNum.ReadOnly = true;
+            // 
             // Remark
             // 
             this.Remark.DataPropertyName = "Remark";
@@ -209,7 +218,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 373);
+            this.ClientSize = new System.Drawing.Size(844, 441);
             this.Controls.Add(this.txtRemark);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtProductCode);
@@ -246,6 +255,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn InPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn OutPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Remark;
         private System.Windows.Forms.DataGridViewButtonColumn Column1;
         private System.Windows.Forms.DataGridViewButtonColumn Column2;
